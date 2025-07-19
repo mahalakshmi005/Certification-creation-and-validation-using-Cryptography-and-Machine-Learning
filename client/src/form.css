@@ -1,0 +1,140 @@
+
+/* --------- Base Styles --------- */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100%;
+  background: linear-gradient(to right, #d4e7ff, #ffffff);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ✅ Adding Light Sweep Animation Background */
+body::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  animation: sweepLight 5s linear infinite;
+  z-index: 0;
+}
+
+/* ✅ Light sweep animation */
+@keyframes sweepLight {
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  100% {
+    transform: rotate(360deg) translate(0, 0);
+  }
+}
+
+/* --------- Auth Container --------- */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  z-index: 1; /* Ensures it's above the light animation */
+}
+
+/* --------- Glassmorphism Box --------- */
+.auth-box {
+  display: flex;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px); /* ✅ Stronger blur for more glass feel */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 900px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* --------- Left Side (Image) --------- */
+.auth-left {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.auth-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+}
+
+/* --------- Right Side (Form) --------- */
+.auth-right {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  text-align: center;
+}
+
+.auth-right h2 {
+  margin-bottom: 10px;
+  color: #1a73e8;
+}
+
+.auth-right p {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.auth-right form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+
+.auth-right form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1a73e8;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.auth-right form button:hover {
+  background-color: #155ac1;
+}
+
+/* --------- Link Text --------- */
+.link-text {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.link-text a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.link-text a:hover {
+  text-decoration: underline;
+}
+
+
+
